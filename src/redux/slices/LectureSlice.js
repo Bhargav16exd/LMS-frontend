@@ -11,7 +11,7 @@ export const createLecture = createAsyncThunk(
     async function(data){
         try {
 
-            const res = axiosInstance.post(`http://localhost:9000/api/v1/course/${data.courseId}/create-lecture`,data.formData)
+            const res = axiosInstance.post(`https://noinertia.up.railway.app/api/v1/course/${data.courseId}/create-lecture`,data.formData)
             toast.promise(res,{
                 loading:"Uploading lecture",
                 success:"Lecture upload Success"
@@ -28,7 +28,7 @@ export const ListLectures = createAsyncThunk(
     "/lecture/view-lectures",
      async function(courseId){
         try {
-          const res = axiosInstance.get(`http://localhost:9000/api/v1/course/${courseId}/view-lecture`)
+          const res = axiosInstance.get(`https://noinertia.up.railway.app/api/v1/course/${courseId}/view-lecture`)
           toast.promise(res,{
             loading:"fetching lectures",
             success:"Lectures fetched Success"
@@ -45,7 +45,7 @@ export const DeleteLecture = createAsyncThunk(
     async function(IDs){
 
         try {
-            const res = axiosInstance.post(`http://localhost:9000/api/v1/course/${IDs.courseId}/delete-lecture/${IDs.lectureId}`)
+            const res = axiosInstance.post(`https://noinertia.up.railway.app/api/v1/course/${IDs.courseId}/delete-lecture/${IDs.lectureId}`)
             toast.promise(res,{
                 loading:"Deleting Lecture",
                 success:"Lecture Deleted Successfully"
@@ -64,7 +64,7 @@ export const CallEditLectureAPI = createAsyncThunk(
     async function(IDs){
 
         try {
-            const res = axiosInstance.post(`http://localhost:9000/api/v1/course/${IDs.courseId}/edit-lecture/${IDs.lectureId}`,IDs.data)
+            const res = axiosInstance.post(`https://noinertia.up.railway.app/api/v1/course/${IDs.courseId}/edit-lecture/${IDs.lectureId}`,IDs.data)
             toast.promise(res,{
                 loading:"Updating Lecture",
                 success:"Lecture Updated Successfully"

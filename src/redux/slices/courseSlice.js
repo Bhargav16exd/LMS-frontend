@@ -12,7 +12,7 @@ export const crtCourse = createAsyncThunk(
     async function(data){
         try {
             console.log(data)
-            const res = axiosInstance.post("http://localhost:9000/api/v1/course/create-course",data)
+            const res = axiosInstance.post("https://noinertia.up.railway.app/api/v1/course/create-course",data)
             toast.promise(res,
             {
                 success:"Course Created Successfully",
@@ -35,7 +35,7 @@ export const getCourses = createAsyncThunk(
     "/course/course-list",
     async function(){
         try {
-            const data = axiosInstance.get("http://localhost:9000/api/v1/course/list-courses")
+            const data = axiosInstance.get("https://noinertia.up.railway.app/api/v1/course/list-courses")
             toast.promise(data,
             {
                 loading:"Wait ! Fetching Course",
@@ -55,7 +55,7 @@ export const updateCoures = createAsyncThunk(
     async function(course){
         console.log(course)
         try {
-            const res = axiosInstance.post(`http://localhost:9000/api/v1/course/${course.courseId}/edit-course`,course.courseData,{
+            const res = axiosInstance.post(`https://noinertia.up.railway.app/api/v1/course/${course.courseId}/edit-course`,course.courseData,{
                 headers:{
                     'Content-Type':'application/json'
                 }
@@ -77,7 +77,7 @@ export const getCourseDetail = createAsyncThunk(
     '/course/singleCourse',
     async function(id){
         try {
-            const course = axiosInstance.get(`http://localhost:9000/api/v1/course/${id}`)
+            const course = axiosInstance.get(`https://noinertia.up.railway.app/api/v1/course/${id}`)
             toast.promise(course,{
                 loading:"Fetching Course Details",
                 success:"Course Fetched Successfully",
@@ -95,7 +95,7 @@ export const deleteCourse = createAsyncThunk(
     async function(courseId){
 
         try {
-            const res = axiosInstance.post(`http://localhost:9000/api/v1/course/${courseId}/delete-course`)
+            const res = axiosInstance.post(`https://noinertia.up.railway.app/api/v1/course/${courseId}/delete-course`)
             toast.promise(res,{
                 loading:"deleting course"
             },{position:"bottom-right"})

@@ -13,7 +13,7 @@ export const createAcc= createAsyncThunk(
     "/auth/signup",
     async function (data){
         try {
-            const res = axiosInstance.post("http://localhost:9000/api/v1/user/register/",data)
+            const res = axiosInstance.post("https://noinertia.up.railway.app/api/v1/user/register/",data)
             toast.promise(res ,
             {
                 loading:"Wait Creating Your Account",
@@ -35,7 +35,7 @@ export const loginAcc = createAsyncThunk(
     "/auth/login",
     async function(data){
         try {
-            const res = axiosInstance.post("http://localhost:9000/api/v1/user/login/",data)
+            const res = axiosInstance.post("https://noinertia.up.railway.app/api/v1/user/login/",data)
             toast.promise(res ,
                 {
                     loading:"Loggin In to Your Account",
@@ -55,7 +55,7 @@ export const logout = createAsyncThunk(
     "/auth/logout",
     async function(){
         try {
-            const res = axiosInstance.post("http://localhost:9000/api/v1/user/logout/")
+            const res = axiosInstance.post("https://noinertia.up.railway.app/api/v1/user/logout/")
             toast.promise(res,{
                 loading:"Logging out of account",
                 success:(data)=>{
@@ -75,7 +75,7 @@ export const updateProfilePicture = createAsyncThunk(
     async function(data){
         try {
 
-            const res = axiosInstance.post("http://localhost:9000/api/v1/user/change-avatar/",data)
+            const res = axiosInstance.post("https://noinertia.up.railway.app/api/v1/user/change-avatar/",data)
             toast.promise(res,{
                 loading:"updating profile"
             })
@@ -94,7 +94,7 @@ export const updateCurrentPassword = createAsyncThunk(
     async function(data){
         try {
 
-            const res = axiosInstance.post("http://localhost:9000/api/v1/user/change-password/",data)
+            const res = axiosInstance.post("https://noinertia.up.railway.app/api/v1/user/change-password/",data)
             toast.promise(res,{
                 loading:"changing password",
                 error:""
@@ -112,7 +112,7 @@ export const handleSubscribe = createAsyncThunk(
    "auth/susscribe",
    async function(courseId){
     try {
-        const res = axiosInstance.post(`http://localhost:9000/api/v1/course/${courseId}/subscribe-course`)
+        const res = axiosInstance.post(`https://noinertia.up.railway.app/api/v1/course/${courseId}/subscribe-course`)
         toast.promise(res,{
             loading:"subscribing",
             success:"Subscription success",
@@ -130,7 +130,7 @@ export const CallForgotPasswordAPI = createAsyncThunk(
     async function(email){
         console.log(email)
      try {
-         const res = axiosInstance.post(`http://localhost:9000/api/v1/user/forgot-password/`,email)
+         const res = axiosInstance.post(`https://noinertia.up.railway.app/api/v1/user/forgot-password/`,email)
          toast.promise(res,{
              loading:"Sending mail",
          })
