@@ -28,7 +28,7 @@ export const ListLectures = createAsyncThunk(
     "/lecture/view-lectures",
      async function(courseId){
         try {
-          const res = axiosInstance.get(`https://noinertia.up.railway.app/api/v1/course/${courseId}/view-lecture`)
+          const res = axiosInstance.get(`https://noinertia.up.railway.app/api/v1/course/${courseId}/view-lectures`)
           toast.promise(res,{
             loading:"fetching lectures",
             success:"Lectures fetched Success"
