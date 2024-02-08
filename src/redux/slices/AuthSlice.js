@@ -63,7 +63,6 @@ export const logout = createAsyncThunk(
                 },
                 error:"Error"
             })
-            localStorage.clear()
             return (await res).data
         } catch (error) {
             toast.error(error?.message) 
